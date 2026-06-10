@@ -59,4 +59,42 @@ void drawFilledRectangle(int row,int col,int height,int width,char ch)
    int i,j;
    for(i=row;i<row+height && i<ROWS;i++)
    {
+      for(j=col;j<col+width && j<COLS;j++)
+        {
+            if(isValid(i,j))
+            canvas[i][j]=ch;
+         }
+     }
+}
+
+void drawLine(int row,int starCol,int endCol,char ch)
+{
+    int i;
+    for(i=starCol;i<endCol;i++)
+    {
+      if(isValid(row,i))
+     canvas[row][i]=ch;
+  }
+}
+
+void drawTriangle(int row,int col,int height,char ch)
+{
+     int i;
+     int baseStart,baseEnd;
+     for(i=0;i<height;i++)
+      {
+          int left=col-i;
+          int right=col+i;
+         if(isValid(row+i,left))
+         canvas[row+i][left]=ch;
+         if(isValid(row+i,right))
+         canvas[row+i][right]=ch;
+}
+baseStart=col-height+1;
+baseEnd=col+height-1;
+for(i=baseStart;i<=baseEnd;i++)
+{
+    if(isValid(row+height-1,i))canvas[row+height-1][i]=ch;
+ }
+}
     
