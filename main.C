@@ -184,3 +184,79 @@ case 3:
    } 
    break;
 }
+case 4: 
+{
+   int row,col,height;
+   printf("Enter TopRow CenterCol Height:");
+    scanf("%d%d%d",&row,&col,&height);
+    if(height<=0){
+        printf("Error: Height must be positive!");
+      else{
+       drawTriangle(row,col,height,'*');
+       printf("Triangle drawn!");
+      }
+    break;
+    }
+case 5: 
+    {
+       int x,y,r;
+       printf("Enter CenterRow CenterCol Radius:");
+       scanf("%d%d%d",&x,&y,&r);
+        if(r<=0){
+         printf("Error:Radius must be positive!");
+         }
+      else{
+        drawCircle(x,y,r,'*');
+         printf("Circle drawn!");
+       }
+     break;
+   }
+
+case 6:
+{
+     int r,c,h,w;
+     printf("Enter Row Col Height Width:");
+     scanf("%d%d%d%d",&r,&c,&h,&w);
+      if(h<=0 || w<=0){
+         printf("error: height and Width must be positive!");
+        }
+      else{
+     drawRectangle(r,c,h,w,'_');
+     printf("Rectangle deleted!");
+  }
+break;
+}
+
+case 7: 
+{
+  int row,start,end;
+ printf("Enter Row StartCol EndCol:");
+scanf("%d%d%d",&row,&start,&end);
+    if(start>end){
+       printf("Error: StartCol must be <= EndCol!");
+       }
+     else{
+       drawLine(row,start,end,'_');
+        printf("Line deleted!");
+        }
+      break;
+   }
+
+case 8:
+   displayCanvas();
+    break;
+
+case 9:
+   initializeCanvas();
+   printf("Canvas cleared successfully!");
+   break;
+
+case 10:
+   printf("Exiting... Thank you for using 2D Graphics Editor!");
+   break;
+   default:
+      printf("Invalid Chocie! Please enter 1-10.");
+   }
+}while(choice !=10);
+return 0;
+}
