@@ -1,0 +1,27 @@
+Testing & Usage
+1.What happens if I draw a rectangle with row=0, col=0, height=5, width=10?
+2.How does the triangle look if I use topRow=5, centerCol=30, height=8?
+3.What's the largest circle radius I can draw without it going out of bounds?
+4.If I draw a line from row=10, startCol=5 to endCol=55, will it fit?
+5.What happens if I try to draw a rectangle that exceeds the canvas boundaries (e.g., row=20, height=10)?
+
+Bug Detection & Edge Cases
+6.Why does the triangle drawing sometimes create gaps or look asymmetric?
+7.What's wrong with the circle drawing when the angle is in degrees but cos()/sin() expect radians?
+8.How does the program behave if I enter negative values for row, col, or radius?
+9.What happens if I try to delete a rectangle or line that doesn't exist on the canvas?
+10.Why might the rectangle drawing overlap incorrectly when height=1 or width=1?
+
+Code Improvement
+11.How can I add support for drawing filled rectangles instead just outlines?
+12.What changes are needed to support different characters for different shapes (not just '*' and '')?
+13.How can I add a "save canvas to file" feature?
+14.What would it take to add diagonal lines or curved lines?
+15.How can I prevent the user from entering coordinates outside the 25×60 canvas?
+
+Conceptual Understanding
+16.How does the coordinate system work in this canvas (is row the y-axis and col the x-axis)?
+17.Why is the canvas initialized with '' instead of spaces or another character?
+18.What's the difference between how the rectangle and triangle are drawn in terms of loops?
+19.How does the circle drawing algorithm work, and why might it produce an imperfect circle?
+20.What would happen if I changed ROWS from 25 to 50 and COLS from 60 to 100?
