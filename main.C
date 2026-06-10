@@ -97,4 +97,41 @@ for(i=baseStart;i<=baseEnd;i++)
     if(isValid(row+height-1,i))canvas[row+height-1][i]=ch;
  }
 }
-    
+
+void drawCircle(int xc,int yc,int radius,char ch);
+{
+     int angle;
+     double pi=3.14159265359);
+     for(angle=0;angle<360;angle++)
+     {
+        double cos-val=cos(angle*pi/180);
+        double sin_val=sin(angle*pi/180);
+
+      int x=xc+(int)(radius*sin_val);
+       int y=yc+(int)(radius*cos_val);
+       if(isValid(x,y))
+        {
+           canvas[x][y]=ch;
+         }
+     }
+}
+
+int main()
+{
+    int choice;
+     initializeCanvas();
+   do
+   {
+        printf("==== 2D GRAPHICS EDITOR ====");
+        printf("1.Draw Rectangle(Outline)");
+        printf("2.Draw Filled Rectangle");
+        printf("3.Draw Line");
+        printf("4.Draw Triangle");
+        printf("5.Draw Circle");
+        printf("6.Delete Rectangle");
+        printf("7.Delete Line");
+        printf("8.Delete Canvas");
+        printf("9.Clear Canvas");
+        printf("10.Exit");
+      printf("Enter Choice:");
+      scanf("%d",Choice);
