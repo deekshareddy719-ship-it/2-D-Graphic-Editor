@@ -17,19 +17,14 @@ void initializeCanvas()
 void displayCanvas()
 {
     int i,j;
-    printf("
-");
    for(i=0;i<ROWS;i++)
    {
         for(j=0;j<COLS;j++)
         {
            printf("%c",canvas[i][j]);
           }
-      printf("
-");
+      printf("\n");
 }
- printf("
-");
 }
 
 int isValid(int row,int col)
@@ -40,17 +35,17 @@ int isValid(int row,int col)
 void drawRectangle(int row,int col,int height,int width,char ch)
 {
     int i;
-    for(i=col;i<col+width && isValid(row,i) && isValid(row+height-1,i);i++)
+    for(i=col;i<col+width && isValid(row,i) && isValid(row + height - 1,i);i++)
 {
       if(isValid(row,i))
 canvas[row][i]=ch;
-      if(isValid(row+height-1,i))canvas[row+height-1][i]=ch;
+      if(isValid(row + height - 1,i))canvas[row + height - 1][i]=ch;
 }
 
 for(i=row;i<row + height && isValid(i,col + width - 1);i++)
      {
-          if(isValid(i,col)) canvas[i][col+width-1]=ch;
-          if(isValid(i,col + width - 1))canvas[i][col+width-1]=ch;
+          if(isValid(i,col)) canvas[i][col + width - 1]=ch;
+          if(isValid(i,col + width - 1))canvas[i][col + width - 1]=ch;
       }
 }
 
@@ -90,21 +85,21 @@ void drawTriangle(int row,int col,int height,char ch)
          if(isValid(row+i,right))
          canvas[row+i][right]=ch;
 }
-baseStart=col-height+1;
-baseEnd=col+height-1;
+baseStart=col - height + 1;
+baseEnd=col + height - 1;
 for(i=baseStart;i<=baseEnd;i++)
 {
-    if(isValid(row+height-1,i))canvas[row+height-1][i]=ch;
+    if(isValid(row + height - 1,i))canvas[row + height - 1][i]=ch;
  }
 }
 
 void drawCircle(int xc,int yc,int radius,char ch);
 {
      int angle;
-     double pi=3.14159265359);
+     double pi=(3.14159265359);
      for(angle=0;angle<360;angle++)
      {
-        double cos-val=cos(angle*pi/180);
+        double cos_val=cos(angle*pi/180);
         double sin_val=sin(angle*pi/180);
 
       int x=xc+(int)(radius*sin_val);
@@ -122,19 +117,19 @@ int main()
      initializeCanvas();
    do
    {
-        printf("==== 2D GRAPHICS EDITOR ====");
-        printf("1.Draw Rectangle(Outline)");
-        printf("2.Draw Filled Rectangle");
-        printf("3.Draw Line");
-        printf("4.Draw Triangle");
-        printf("5.Draw Circle");
-        printf("6.Delete Rectangle");
-        printf("7.Delete Line");
-        printf("8.Delete Canvas");
-        printf("9.Clear Canvas");
-        printf("10.Exit");
-      printf("Enter Choice:");
-      scanf("%d",Choice);
+        printf("==== 2D GRAPHICS EDITOR ====\n");
+        printf("1.Draw Rectangle(Outline)\n");
+        printf("2.Draw Filled Rectangle\n");
+        printf("3.Draw Line\n");
+        printf("4.Draw Triangle\n");
+        printf("5.Draw Circle\n");
+        printf("6.Delete Rectangle\n");
+        printf("7.Delete Line\n");
+        printf("8.Delete Canvas\n");
+        printf("9.Clear Canvas\n");
+        printf("10.Exit\n");
+      printf("Enter Choice:\n");
+      scanf("%d",&Choice);
 
     switch(choice)
     {
@@ -150,7 +145,7 @@ int main()
           else
               {
               drawRectangle(r,c,h,w,'*');
-               printf("Rectangle drawn!");
+               printf("Rectangle drawn!\n");
                }
                 break;
               }
@@ -164,7 +159,7 @@ int main()
       }
       else{
      drawFilledRectangle(r,c,h,w,'*');
-       printf("Filled rectangle drawn!");
+       printf("Filled rectangle drawn!\n");
        }
       break;
 }
@@ -180,7 +175,7 @@ case 3:
    }
   else{
     drawLine(row,start,end,'*');
-    printf("Line drawn!");
+    printf("Line drawn!\n");
    } 
    break;
 }
@@ -193,7 +188,7 @@ case 4:
         printf("Error: Height must be positive!");
       else{
        drawTriangle(row,col,height,'*');
-       printf("Triangle drawn!");
+       printf("Triangle drawn!\n");
       }
     break;
     }
@@ -207,7 +202,7 @@ case 5:
          }
       else{
         drawCircle(x,y,r,'*');
-         printf("Circle drawn!");
+         printf("Circle drawn!\n");
        }
      break;
    }
@@ -222,7 +217,7 @@ case 6:
         }
       else{
      drawRectangle(r,c,h,w,'_');
-     printf("Rectangle deleted!");
+     printf("Rectangle deleted!\n");
   }
 break;
 }
@@ -237,7 +232,7 @@ scanf("%d%d%d",&row,&start,&end);
        }
      else{
        drawLine(row,start,end,'_');
-        printf("Line deleted!");
+        printf("Line deleted!\n");
         }
       break;
    }
@@ -248,11 +243,11 @@ case 8:
 
 case 9:
    initializeCanvas();
-   printf("Canvas cleared successfully!");
+   printf("Canvas cleared successfully!\n");
    break;
 
 case 10:
-   printf("Exiting... Thank you for using 2D Graphics Editor!");
+   printf("Exiting... Thank you for using 2D Graphics Editor!\n");
    break;
    default:
       printf("Invalid Chocie! Please enter 1-10.");
