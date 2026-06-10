@@ -135,3 +135,52 @@ int main()
         printf("10.Exit");
       printf("Enter Choice:");
       scanf("%d",Choice);
+
+    switch(choice)
+    {
+       case 1:
+       {
+           int r,c,h,w;
+           printf("Enter Row Col Height Width:");
+           scanf("%d%d%d%d",&r,&c,&h,&w);
+            if(h<=0 || w<=0)
+           {
+               printf("Error: Height and width must be positive!");
+            }
+          else
+              {
+              drawRectangle(r,c,h,w,'*');
+               printf("Rectangle drawn!");
+               }
+                break;
+              }
+   case 2:
+     {
+        int r,c,h,w;
+      printf("Enter Row COl Height Width:");
+      scanf("%d%d%d%d",&r,&c,&h,&w);
+      if(h<=0 || w<=0){
+       printf("Error: Height and Width must be positive!");
+      }
+      else{
+     drawFilledRectangle(r,c,h,w,'*');
+       printf("Filled rectangle drawn!");
+       }
+      break;
+}
+
+case 3:
+   {
+     int row,start,end;
+   printf("Enter Row StartCol EndCol:");
+   scanf("%d%d%d",&row,&start,&end);
+   if(start>end)
+{
+    printf("Error: StartCol must be <=EndCol!");
+   }
+  else{
+    drawLine(row,start,end,'*');
+    printf("Line drawn!");
+   } 
+   break;
+}
